@@ -5,18 +5,18 @@ from scipy.stats import rankdata
 
 # Written on August 28, 2023 by Nikki Sanderson
 
-# Takes a symmetric matrix and returns the corresponding
+# THIS FUNCTION takes a symmetric matrix and returns the corresponding
 # integer matrix whose entries are the rank ordering 
-# of the input matrix entries.
+# of the input matrix entries, with the lowest entry having a rank of 1.
 #
 # SYNTAX :
-# matrix_2_order_matrix(Matrix)
+#  matrix_2_order_matrix(Matrix)
 #
 # INPUT:
-# Matrix - numpy array, symmetric matrix
+#  Matrix - numpy array, symmetric matrix
 #
 # RETURNS:
-# OrderMatrix - numpy array, integer symmetric matrix with zeros on the diagonal 
+#  OrderMatrix - numpy array, integer symmetric matrix with zeros on the diagonal 
 
 def matrix_2_order_matrix(Matrix):
 
