@@ -44,7 +44,7 @@ from pyCliqueTop_2023_apr_2_2023 import plot_betti_curves
 # ________________________________________________________________
 # Set the size of the (n,n) symmetric matrix (equivalently, the number of vertices in the order complex)
 # ________________________________________________________________
-n = 30
+n = 40 
 # ________________________________________________________________
 # Make a random symmetric iid matrix of size (n,n)
 # ________________________________________________________________
@@ -57,7 +57,7 @@ for i in range(n):
 # Make a uniformly random sample of 'n' points in a 'geometric_dim'-dimensional 
 # unit cube in Euclidean space
 # ________________________________________________________________
-geometric_dim = 2
+geometric_dim = 3
 #
 #
 xy_coords = np.random.uniform(size=(n,geometric_dim))
@@ -76,12 +76,13 @@ for i in range(n):
 # Make a random correlation matrix of size (n,n)
 # where entries are the correlations between points the sampled 
 # uniformly in a 'geometric_dim' dimensional unit cube in Euclidean space
+#  scipy.spatial.distance.cosine(u, v
 # ________________________________________________________________
 A_correlations = np.ones((n,n))
 for i in range(n):
     for j in range(i+1,n):
-        A_correlations[i,j] = A_correlations[j,i] = scipy.stats.pearsonr(xy_coords[i,:],xy_coords[j,:])[0] 
-#
+        A_correlations[i,j] = A_correlations[j,i] = -1*scipy.spatial.distance.cosine(xy_coords[i,:],xy_coords[j,:]) + 1#scipy.stats.pearsonr(xy_coords[i,:],xy_coords[j,:])[0] 
+#   
 # ________________________________________________________________
 # 
 # Call the function 'compute_betti_curves()' to gets Betti curves for
@@ -118,7 +119,7 @@ ax[0] = plot_betti_curves(ax[0], distance_bettis, distance_edge_densities, color
 ax[1] = plot_betti_curves(ax[1], correlation_bettis, correlation_edge_densities, colors, title_string = 'correlations')
 ax[2] = plot_betti_curves(ax[2], random_bettis, random_edge_densities, colors, title_string = 'random iid')
 #
-plt.suptitle('compute_betti_curves()')
+plt.suptitle('compute_betti_curves() \n n = %d, dim = %d' % (n,geometric_dim))
 plt.show()
 # ________________________________________________________________
 # 
@@ -180,7 +181,7 @@ ax[1,1].set_title('order correlations')
 ax[0,2].set_title('random iid')
 ax[1,2].set_title('order random iid')
 #
-plt.suptitle('matrix_2_order_matrix()')
+plt.suptitle('matrix_2_order_matrix() \n n = %d, dim = %d' % (n,geometric_dim))
 plt.show()
 # ________________________________________________________________
 # 
@@ -218,7 +219,7 @@ for i in range(max_dim+1):
     ax[1,0].plot([np.min(distances_order_matrix),np.max(distances_order_matrix)],[np.min(distances_order_matrix),np.max(distances_order_matrix)], color = 'grey')
     ax[1,0].scatter(order_distances_DGMs[i][:,0],order_distances_DGMs[i][:,1],c=colors[i],s=5)
     #
-    ax[0,1].plot([np.min(A_correlations),np.max(A_correlations)],[np.min(A_correlations),np.max(A_correlations)], color = 'grey')
+    ax[0,1].plot([np.min(-1*A_correlations),np.max(-1*A_correlations)],[np.min(-1*A_correlations),np.max(-1*A_correlations)], color = 'grey')
     ax[0,1].scatter(correlations_DGMs[i][:,0],correlations_DGMs[i][:,1],c=colors[i],s=5)
     ax[1,1].plot([np.min(correlations_order_matrix),np.max(correlations_order_matrix)],[np.min(correlations_order_matrix),np.max(correlations_order_matrix)], color = 'grey')
     ax[1,1].scatter(order_correlations_DGMs[i][:,0],order_correlations_DGMs[i][:,1],c=colors[i],s=5)
@@ -237,7 +238,7 @@ ax[1,1].set_title('order correlations')
 ax[0,2].set_title('random iid')
 ax[1,2].set_title('order random iid')
 #
-plt.suptitle('matrix_2_persistence_diagrams()')
+plt.suptitle('matrix_2_persistence_diagrams() \n n = %d, dim = %d' % (n,geometric_dim))
 plt.show()
 #
 # ________________________________________________________________
@@ -279,12 +280,16 @@ ax[1,1] = plot_betti_curves(ax[1,1], order_correlations_BCs, order_correlations_
 ax[0,2] = plot_betti_curves(ax[0,2], random_iid_BCs, random_iid_EDs, colors, title_string = 'random iid')
 ax[1,2] = plot_betti_curves(ax[1,2], order_random_iid_BCs, order_random_iid_EDs, colors, title_string = 'order random iid')
 #
-plt.suptitle('persistence_diagrams_2_betti_curves()')
+plt.suptitle('persistence_diagrams_2_betti_curves() \n n = %d, dim = %d' % (n,geometric_dim))
 plt.show()
 
 
 #
 '''
+# NEED TO STILL WRITE OUT ABOUT THIS AND WRITE SCRIPT TO RUN AND PLOT AND COMPARE:
+# MAYBE ALSO WORTH SHOWING WHAT HAPPENS WHEN YOU PUT IT IN BACKWARDS AND A LITTLE
+# WRITE UP ABOUT WHY DOESN'T MAKE MUCH SENSE THOUGH STILL COULD SHOW DIFFERENCES
+# MAYBE WOULD MAKE MORE CONNECTED QUICKEST IF WERE TO CONNECT THIS WAY? MAYBE NOT :/
 #
 matrix_2_betti_curves()
 '''
@@ -295,11 +300,19 @@ matrix_2_betti_curves()
 
 # ____________
 # ____________
+
+'''
+# This has previously been run and saved
+# in the repository.
+# It's copied here now so you can cross-check 
+# what's loaded or re-save if needed.
+
 A = [[1,7,8,3,8.2,5],[2,5.4,3.6,1.8,4,2.1],[9,4,6,3.3,4.5,5.7],
             [2.9,5.2,3.4,8.6,7.8,9.1],[6.3,3.5,5.9,4.7,3.9,6.2],[7.4,8.6,9.8,5.1,8.3,3.7]]
 mdict = {}
 mdict['correlations'] = A
 scipy.io.savemat('tester_correlations_1.mat', mdict)
+'''
 #
 #
 mdict = scipy.io.loadmat('tester_correlations_1.mat',simplify_cells=True)
@@ -312,5 +325,6 @@ title_str = 'tester_correlations_1'
 fig, ax = plt.subplots(nrows=1,ncols=2,figsize=(12,7))
 ax[0].imshow(A,cmap='jet')
 ax[1] = plot_betti_curves(ax[1], betti_curves, edge_densities, colors, title_string = '%s' % title_str)
+plt.suptitle('tester correlations 1')
 plt.show()
 ###############
