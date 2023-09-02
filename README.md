@@ -1,4 +1,5 @@
 # PyCliqueTop_2023
+Written on August 28, 2023 by Nikki Sanderson
 Python version of MATLAB CliqueTop package by Chad Giusti PNAS 2015.
 
 Persisent homology (previously computed using Perseus) is now computed 
