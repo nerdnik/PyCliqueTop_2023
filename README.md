@@ -4,7 +4,7 @@ Python version of MATLAB CliqueTop package by Chad Giusti PNAS 2015.
 Persisent homology (previously computed using Perseus) is now computed 
 using the python package Ripser.  
 
-Computes Betti curves from similarity (ex. correlation) or dissimilarity (ex. distance) matrices. The main functions are:
+Computes Betti curves of clique complexs from similarity (ex. correlation) or dissimilarity (ex. distance) matrices. The main functions are:
 
 * compute_betti_curves() 
 
