@@ -15,8 +15,6 @@ PyCliqueTop_2023 computes Betti curves of clique complexs for an input similarit
 
 * compute_betti_curves() 
 
-* matrix_2_betti_curves()
-
 * matrix_2_order_matrix() 
 
 * matrix_2_persistence_diagrams() 
@@ -25,7 +23,7 @@ PyCliqueTop_2023 computes Betti curves of clique complexs for an input similarit
 
 * plot_betti_curves()
 
-Both 'compute_betti_curves()' and 'matrix_2_betti_curves()' take a symmetric matrix as input, call on 'matrix_2_order_matrix()', 'matrix_2_persistence_diagrams()', and 'persistence_diagrams_2_betti_curves()', and return Betti curves. Both 'compute_betti_curves()' and 'matrix_2_betti_curves()' also have an optional input parameter to allow the user to set a maximum homological dimension up to which to compute the persistent homology (default = 3). The main difference between the two functions is the flexibility provided by the additional optional input parameters to these two functions.  While 'compute_betti_curves()' allows the user to specify whether the input matrix is a similarity (ex. correlation) or dissimilarity (ex. distance) matrix (default similarity = True), it computes the Rips complex in its entirety. On the other hand, 'matrix_2_betti_curves()' assumes that the input is a dissimilarity (ex. distance) matrix, yet allows the user to specify a threshold at which to terminate the construction of the Rips complex to control computational demands (default = np.inf).  
+The main function 'compute_betti_curves()' takes as input a symmetric matrix and outputs Betti curves.  It calls on the functions (1) 'matrix_2_order_matrix()', (2) 'matrix_2_persistence_diagrams()', and (3) 'persistence_diagrams_2_betti_curves()' in order to return Betti curves. The function 'compute_betti_curves()' also has two optional input parameters: 'max_dim' and 'similarity'.  The first optional parameter 'max_dim' allows the user to set a maximum homological dimension up to which to compute the persistent homology (default 'max_dim' = 3).  The second optional parameter 'similarity' is a boolean that allows the user to specify whether the input matrix is a similarity (ex. correlation) or dissimilarity (ex. distance) matrix (default 'similarity' = True).
 
 
 
