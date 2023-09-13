@@ -25,8 +25,4 @@ PyCliqueTop_2023 computes Betti curves of clique complexs for an input similarit
 
 The wrapper function 'compute_betti_curves()' takes as input a symmetric matrix and outputs Betti curves.  It calls on the functions (1) 'matrix_2_order_matrix()', (2) 'matrix_2_persistence_diagrams()', and (3) 'persistence_diagrams_2_betti_curves()' internally. It also has two optional input parameters: 'max_dim' and 'similarity'.  The first optional parameter 'max_dim' allows the user to set a maximum homological dimension up to which to compute the persistent homology (default 'max_dim' = 3).  The second optional parameter 'similarity' is a boolean that allows the user to specify whether the input matrix is a similarity (ex. correlation) or dissimilarity (ex. distance) matrix (default 'similarity' = True). 
 
-
-
-
-
-
+Dependencies: Python3, numpy, scipy, scipy.io, scipy.stats, matplotlib, Ripser
