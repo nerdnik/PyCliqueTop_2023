@@ -1,10 +1,17 @@
 # PyCliqueTop_2023
 Written on August 28, 2023 by Nikki Sanderson
 
-A python version of MATLAB CliqueTop package by Chad Giusti PNAS 2015. Persisent homology (previously computed using Perseus) is now computed 
-using the python package Ripser.  
+PyCliqueTop_2023 is a python version of MATLAB CliqueTop package by Chad Giusti corresponding to the 2015 PNAS paper "Clique topology reveals intrinsic geometric structure in neural correlations". 
 
-Computes Betti curves of clique complexs from similarity (ex. correlation) or dissimilarity (ex. distance) matrices. The main functions are:
+Persisent homology (previously computed using Perseus) is now computed using the python package Ripser (https://ripser.scikit-tda.org). 
+
+To run the functions in PyCliqueTop_2023, you'll need first install Ripser. To install Ripser, you'll need Cython. To install both of these, run the following in your terminal:
+
+pip install Cython
+
+pip install Ripser
+
+PyCliqueTop_2023 computes Betti curves of clique complexs for an input similarity (ex. correlation) or dissimilarity (ex. distance) matrices.  The main functions are:
 
 * compute_betti_curves() 
 
