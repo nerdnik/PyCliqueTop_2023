@@ -40,7 +40,7 @@ from pyCliqueTop_2023_apr_2_2023 import plot_betti_curves
 # It then calls 'compute_betti_curves()' for each of these matrices to return Betti curves,
 # and calls 'plot_betti_curves()' to plot the Betti curves for each of these matrices.
 #
-# Running this script 'pyclique_top_script_2.py' will produce a figure with three panels.
+# Running this script 'pycliquetop_script_2.py' will produce a figure with three panels.
 # Each panel will have a set of Betti curves for one of the three random matrices.
 # ________________________________________________________________
 # (1) Set the size of the (n,n) symmetric matrix 
