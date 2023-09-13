@@ -40,7 +40,7 @@ from pyCliqueTop_2023_apr_2_2023 import plot_betti_curves
 # It then calls 'compute_betti_curves()' for each of these matrices to return Betti curves,
 # and calls 'plot_betti_curves()' to plot the Betti curves for each of these matrices.
 #
-# Running this script 'pyclique_top_script_29aug2023.py' will produce a figure with three panels.
+# Running this script 'pyclique_top_script_2.py' will produce a figure with three panels.
 # Each panel will have a set of Betti curves for one of the three random matrices.
 # ________________________________________________________________
 # (1) Set the size of the (n,n) symmetric matrix 
@@ -98,12 +98,15 @@ for i in range(n):
 # before the function call with the specific panel as both an input and the output
 # of the function.  
 # ________________________________________________________________
-fig, ax = plt.subplots(nrows = 1, ncols = 3, figsize = (12,4))
+fig, ax = plt.subplots(nrows = 2, ncols = 3, figsize = (12,4))
 colors = ['black','blue','red','green']
 #
-ax[0] = plot_betti_curves(ax[0], distance_bettis, distance_edge_densities, colors, title_string = 'distances')
-ax[1] = plot_betti_curves(ax[1], correlation_bettis, correlation_edge_densities, colors, title_string = 'correlations')
-ax[2] = plot_betti_curves(ax[2], random_bettis, random_edge_densities, colors, title_string = 'random iid')
+ax[0,0].imshow(A_distances, cmap='jet')
+ax[0,1].imshow(A_correlations,cmap='jet')
+ax[0,2].imshow(A_random_iid,cmap='jet')
+ax[1,0] = plot_betti_curves(ax[0], distance_bettis, distance_edge_densities, colors, title_string = 'distances')
+ax[1,1] = plot_betti_curves(ax[1], correlation_bettis, correlation_edge_densities, colors, title_string = 'correlations')
+ax[1,2] = plot_betti_curves(ax[2], random_bettis, random_edge_densities, colors, title_string = 'random iid')
 #
 plt.suptitle('pycliquetop_script_2.py: compute_betti_curves() with n = %d, dim = %d' % (n,geometric_dim))
 plt.show()

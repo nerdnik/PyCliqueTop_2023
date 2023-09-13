@@ -39,7 +39,7 @@ from pyCliqueTop_2023_apr_2_2023 import plot_betti_curves
 # It then calls 'compute_betti_curves()' for this matrix to return Betti curves,
 # and calls 'plot_betti_curves()' to plot the Betti curves for this matrix.  
 #
-# Running this script 'pyclique_top_script_1.py' will produce a figure with a single panel.
+# Running this script 'pycliquetop_script_1.py' will produce a figure with a single panel.
 # This panel will have a set of Betti curves.
 # ________________________________________________________________
 # (1) Load a precomputed symmetric matrix.  
@@ -55,8 +55,10 @@ A = mdict['correlations']
 # ________________________________________________________________
 colors = ['black', 'blue','red','green']
 title_str = 'tester_correlations_1'
-fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(12,7))
-ax = plot_betti_curves(ax, betti_curves, edge_densities, colors, title_string = '%s' % title_str)
+fig, ax = plt.subplots(nrows=1,ncols=2,figsize=(12,7))
+ax[0].imshow(A)
+ax[0].set_title('input matrix')
+ax[1] = plot_betti_curves(ax[1], betti_curves, edge_densities, colors, title_string = '%s' % title_str)
 plt.suptitle('pycliquetop_script_1.py')
 plt.show()
 ###############

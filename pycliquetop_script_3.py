@@ -42,12 +42,13 @@ from pyCliqueTop_2023_apr_2_2023 import plot_betti_curves
 # It then calls 'compute_betti_curves()' for each of these matrices to return Betti curves,
 # and calls 'plot_betti_curves()' to plot the Betti curves for each of these matrices.
 #
-# Running this script 'pyclique_top_script_29aug2023.py' will produce a figure with three panels.
-# Each panel will have a set of Betti curves for one of the three random matrices.
-#
-# Additionally, this script will 
-#
-# Running this script 'pyclique_top_script_12sept2023.py' will 
+# Additionally, this script calls sequentially the functions called internally by 'compute_betti_curves()' and plot their outputs.
+# These are:
+#      - matrix_2_order_matrix()
+#	- matrix_2_persistence_diagrams()
+#       - persistence_diagrams_2_betti_curves()
+# 
+# Running this script 'pycliquetop_script_3.py' will produce four figures.
 # ________________________________________________________________
 # (1) Set the size of the (n,n) symmetric matrix (equivalently, the number of vertices in the order complex)
 # ________________________________________________________________
