@@ -1,9 +1,9 @@
 # PyCliqueTop_2023
 Written on August 28, 2023 by Nikki Sanderson
 
-PyCliqueTop_2023 is a python version of MATLAB CliqueTop package by Chad Giusti corresponding to the 2015 PNAS paper "Clique topology reveals intrinsic geometric structure in neural correlations". 
+PyCliqueTop_2023 is a python version of the MATLAB CliqueTop package by Chad Giusti corresponding to the 2015 PNAS paper "Clique topology reveals intrinsic geometric structure in neural correlations". 
 
-Persisent homology (previously computed using Perseus) is now computed using the python package Ripser (https://ripser.scikit-tda.org). 
+Persisent homology (previously computed using the software Perseus) is now computed using the python package Ripser (https://ripser.scikit-tda.org). 
 
 To run the functions in PyCliqueTop_2023, you'll need first install Ripser. To install Ripser, you'll need Cython. To install both of these, run the following in your terminal:
 
