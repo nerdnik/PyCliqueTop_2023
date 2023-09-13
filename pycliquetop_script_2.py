@@ -98,7 +98,7 @@ for i in range(n):
 # before the function call with the specific panel as both an input and the output
 # of the function.  
 # ________________________________________________________________
-fig, ax = plt.subplots(nrows = 2, ncols = 3, figsize = (12,4))
+fig, ax = plt.subplots(nrows = 2, ncols = 3, figsize = (12,7))
 colors = ['black','blue','red','green']
 #
 ax[0,0].imshow(A_distances, cmap='jet')
