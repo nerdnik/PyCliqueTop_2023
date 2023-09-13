@@ -31,6 +31,6 @@ To test that these functions work on your own machine, please run the following 
 - pycliquetop_script_2.py
 - pylciquetop_script_3.py
 
-These example scripts also include many comments about how to use the PyCliqueTop_2023 functions, so please also read through the example scripts for additional information that may be helpful.  Further comments about the individual functions are included in the function scripts themselves.      
+These example scripts also include many comments about how to use the PyCliqueTop_2023 functions, so please also read through the example scripts for additional information that may be helpful.  Further comments about the PyCliqueTop_2023 functions are also included in the function scripts themselves.      
 
 Dependencies: Python3, numpy, scipy, scipy.io, scipy.stats, matplotlib, Ripser
