@@ -104,9 +104,9 @@ colors = ['black','blue','red','green']
 ax[0,0].imshow(A_distances, cmap='jet')
 ax[0,1].imshow(A_correlations,cmap='jet')
 ax[0,2].imshow(A_random_iid,cmap='jet')
-ax[1,0] = plot_betti_curves(ax[0], distance_bettis, distance_edge_densities, colors, title_string = 'distances')
-ax[1,1] = plot_betti_curves(ax[1], correlation_bettis, correlation_edge_densities, colors, title_string = 'correlations')
-ax[1,2] = plot_betti_curves(ax[2], random_bettis, random_edge_densities, colors, title_string = 'random iid')
+ax[1,0] = plot_betti_curves(ax[1,0], distance_bettis, distance_edge_densities, colors, title_string = 'distances')
+ax[1,1] = plot_betti_curves(ax[1,1], correlation_bettis, correlation_edge_densities, colors, title_string = 'correlations')
+ax[1,2] = plot_betti_curves(ax[1,2], random_bettis, random_edge_densities, colors, title_string = 'random iid')
 #
 plt.suptitle('pycliquetop_script_2.py: compute_betti_curves() with n = %d, dim = %d' % (n,geometric_dim))
 plt.show()
