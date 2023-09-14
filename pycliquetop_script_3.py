@@ -49,6 +49,13 @@ from pyCliqueTop_2023_apr_2_2023 import plot_betti_curves
 #       - persistence_diagrams_2_betti_curves()
 # 
 # Running this script 'pycliquetop_script_3.py' will produce four figures.
+#
+# Figure 1 has three panels, each with Betti curves, one for each of the three random matrices
+# Figure 2 has six panels, the top row has the three random matrices and the bottom row has the corresponding order matrix
+# Figure 3 has three panels, each with persistence diagrams, one for each of the three random matrices
+# Figure 4 has three panels, each with Betti curves, one for each of the three random matrices
+#
+# Note that Figure 1 and Figure 4 should be identical.
 # ________________________________________________________________
 # (1) Set the size of the (n,n) symmetric matrix (equivalently, the number of vertices in the order complex)
 # ________________________________________________________________
@@ -147,7 +154,7 @@ plt.suptitle('pycliquetop_script_3.py: compute_betti_curves() --- n = %d, dim = 
 # are added into the filtration of the oder complex first. 
 #
 # Here we do this by multiplying the similarity (ex. correlation) matrix by -1.
-# (Notice this is done internally when using the wrapper function 'compute_betti_curves()'
+# (This is done internally when using the wrapper function 'compute_betti_curves()'
 # if the input parameter 'similarity' is set to True.)
 #
 # Alternatively, one can get the order matrix of the similarity (ex. correlation)
@@ -156,7 +163,7 @@ plt.suptitle('pycliquetop_script_3.py: compute_betti_curves() --- n = %d, dim = 
 # before calling 'matrix_2_persistence_diagrams()' to get the persistent homology.  
 # ________________________________________________________________
 distances_order_matrix =  matrix_2_order_matrix(A_distances)
-correlations_order_matrix =  matrix_2_order_matrix(-1*A_correlations)
+correlations_order_matrix =  matrix_2_order_matrix(-1*A_correlations) # Note this multipliation by -1 
 random_iid_order_matrix =  matrix_2_order_matrix(A_random_iid)
 # ________________________________________________________________
 # (9) Plotting the three distance matrices above the three corresponding order matrices.

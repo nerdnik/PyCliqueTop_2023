@@ -39,8 +39,9 @@ from pyCliqueTop_2023_apr_2_2023 import plot_betti_curves
 # It then calls 'compute_betti_curves()' for this matrix to return Betti curves,
 # and calls 'plot_betti_curves()' to plot the Betti curves for this matrix.  
 #
-# Running this script 'pycliquetop_script_1.py' will produce a figure with a single panel.
-# This panel will have a set of Betti curves.
+# Running this script 'pycliquetop_script_1.py' will produce a figure with two panels.
+# The left panel will have the 6x6 symmetric input matris and 
+# the right panel will have the Betti curves.
 # ________________________________________________________________
 # (1) Load a precomputed symmetric matrix.  
 # ________________________________________________________________
